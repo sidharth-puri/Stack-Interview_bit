@@ -1,7 +1,5 @@
 #include <bits/stdc++.h> 
 using namespace std; 
-
-
 class Stack 
 { 
 	public: 
@@ -9,8 +7,6 @@ class Stack
 	unsigned capacity; 
 	char* array; 
 }; 
-
- 
 Stack* createStack(unsigned capacity) 
 { 
 	Stack* stack = new Stack(); 
@@ -19,31 +15,22 @@ Stack* createStack(unsigned capacity)
 	stack->array = new char[(stack->capacity * sizeof(char))]; 
 	return stack; 
 } 
-
- 
 int isFull(Stack* stack) 
 { return stack->top == stack->capacity - 1; } 
-
- 
 int isEmpty(Stack* stack) 
 { return stack->top == -1; } 
-
- 
 void push(Stack* stack, char item) 
 { 
 	if (isFull(stack)) 
 		return; 
 	stack->array[++stack->top] = item; 
 } 
-
- 
 char pop(Stack* stack) 
 { 
 	if (isEmpty(stack)) 
 		return -1; 
 	return stack->array[stack->top--]; 
 } 
- 
 void reverse(char str[]) 
 { 
 	
@@ -57,13 +44,10 @@ void reverse(char str[])
 	for (i = 0; i < n; i++) 
 		str[i] = pop(stack); 
 } 
- 
 int main() 
 { 
 	char str[] = "GeeksQuiz"; 
-
 	reverse(str); 
 	cout << "Reversed string is " << str; 
-
 	return 0; 
 } 
